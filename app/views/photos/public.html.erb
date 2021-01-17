@@ -1,0 +1,16 @@
+<h1>Photo Repo</h1>
+<% if logged_in? %>
+  <%= current_user.username %>
+  - Link to personal pictures
+<%= link_to "Upload", '/upload', method: :get%>
+<%= link_to "Logout", sessions_path, method: :delete%>
+<%= link_to "My Photos", 'user/photos', method: :get%>
+<% else %>
+<%= link_to "Login", 'login', method: :get%>
+<%= link_to "Signup", new_user_path, method: :get%>
+<% end %>
+<br>
+<% @photos.each do |photo| %>
+  <%= image_tag(url_for(photo.image)) %>
+<% end %>
+<p>Find me in app/views/photos/public.html.erb</p>

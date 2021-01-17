@@ -1,0 +1,9 @@
+<h1>Login</h1>
+<%= form_with url: '/login' do |f|%>
+  <%= f.label :username, 'Username: '%>
+  <%= f.text_field :username%><br>
+  <%= f.label :password, 'Password: '%>
+  <%= f.text_field :password%><br>
+  <%= f.submit %>
+<%end%>
+

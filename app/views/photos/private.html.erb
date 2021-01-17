@@ -1,0 +1,5 @@
+<h1>My Photos</h1>
+<% @photos.each do |photo| %>
+  <%= puts "fdsafdsafdsafdsa #{photo.image}"%>
+  <%= image_tag(url_for(photo.image)) %>
+<% end %>

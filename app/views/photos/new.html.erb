@@ -1,0 +1,11 @@
+<h1>Upload Photos</h1>
+<%= form_with model: [current_user,current_user.photos.build] do |f|%>
+  <%= f.label :name, 'Name: '%>
+  <%= f.text_field :name%><br>
+  <%= f.label :description, 'Description: '%>
+  <%= f.text_field :description%><br>
+  <%= f.label :is_public, 'Public? : '%>
+  <%= f.check_box :is_public %><br>
+  <%= f.file_field :images, :multiple => true, name: 'images[]'%><br>
+  <%= f.submit %>
+<% end %>
