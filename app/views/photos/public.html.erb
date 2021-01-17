@@ -1,5 +1,10 @@
 <h2>Public Photos</h2>
 <br>
 <% @photos.each do |photo| %>
-  <%= image_tag(url_for(photo.image), :width => "20%") %>
+  <div style="dislay:block">
+    <%= image_tag(url_for(photo.image), :width => "20%") %><br>
+    Uploaded By: <%= User.where(id: photo.user_id).first.username %> <br>
+    Name: <%= photo.name %> <br>
+    Description: <%= photo.description %> <br>
+  </div>
 <% end %>
