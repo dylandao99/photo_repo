@@ -2,7 +2,7 @@
 <%= form_with url:'/user/photos', method: :delete do |f| %>
   <%= f.submit 'Delete Selected' %>
   <% @photos.each do |photo| %>
-    <%= image_tag(url_for(photo.image)) %>
+    <%= f.label :photo_ids, image_tag(url_for(photo.image)), value: photo.id %>
     <%= f.check_box :photo_ids, {:multiple => true}, photo.id, nil %>
   <% end %>
 <% end %>
