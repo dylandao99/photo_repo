@@ -1,4 +1,6 @@
 class PhotosController < ApplicationController
+  skip_before_action :authorized, only: [:public]
+
   def public
     @photos = Photo.all.select {|photo| photo.is_public}
   end
