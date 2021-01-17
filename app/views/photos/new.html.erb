@@ -1,4 +1,4 @@
-<h1>Upload Photos</h1>
+<h2>Upload Photos</h2>
 <%= form_with model: [current_user,current_user.photos.build] do |f|%>
   <%= f.label :name, 'Name: '%>
   <%= f.text_field :name%><br>
