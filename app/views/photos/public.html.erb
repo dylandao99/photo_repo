@@ -1,5 +1,5 @@
 <h2>Public Photos</h2>
 <br>
 <% @photos.each do |photo| %>
-  <%= image_tag(url_for(photo.image)) %>
+  <%= image_tag(url_for(photo.image), :width => "20%") %>
 <% end %>
