@@ -21,7 +21,7 @@ class PhotosController < ApplicationController
 
   def delete
     puts params[:photo_ids]
-    current_user.photos.where(:id => params[:photo_ids]).destroy_all
+    current_user.photos.where(:id => params[:photo_ids]).delete_all
     redirect_to '/user/photos'
   end
 end

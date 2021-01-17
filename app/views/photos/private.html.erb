@@ -1,6 +1,18 @@
+<script type="text/javascript">
+      function selectAll(select){
+        $("input:checkbox").each(function(){
+          $(this).attr('checked', select);
+        });
+
+        return false;
+      }
+</script>
+
 <h1>My Photos</h1>
+<%= submit_tag "Select All", onclick: "selectAll(true)"%>
+<%= submit_tag "Deselect All", onclick: "selectAll(false)"%>
 <%= form_with url:'/user/photos', method: :delete do |f| %>
-  <%= f.submit 'Delete Selected' %>
+  <%= f.submit 'Delete Selected' %><br>
   <% @photos.each do |photo| %>
     <%= f.label :photo_ids, image_tag(url_for(photo.image)), value: photo.id %>
     <%= f.check_box :photo_ids, {:multiple => true}, photo.id, nil %>
