@@ -2,11 +2,11 @@ class PhotosController < ApplicationController
   skip_before_action :authorized, only: [:public]
 
   def public
-    @photos = Photo.all.select {|photo| photo.is_public}
+    @photos = Photo.all.reverse_order.select {|photo| photo.is_public}
   end
 
   def private
-    @photos = current_user.photos.all
+    @photos = current_user.photos.reverse_order.all
   end
 
   def create
