@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'user/photos', to: 'photos#private'
   get 'upload', to: 'photos#new'
   post 'user/photos', to: 'photos#create'
+  delete 'user/photos', to: 'photos#delete'
  
   delete '/sessions', to: 'sessions#logout'
   get '/login', to: 'sessions#new'

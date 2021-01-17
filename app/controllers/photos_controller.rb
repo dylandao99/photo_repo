@@ -12,10 +12,16 @@ class PhotosController < ApplicationController
       params[:photo][:image] = image
       current_user.photos.create(params.require(:photo).permit(:name, :description, :is_public, :image))
     end
-    redirect_to root_path
+    redirect_to '/user/photos'
   end
 
   def new
     @photo = current_user.photos.build
+  end
+
+  def delete
+    puts params[:photo_ids]
+    current_user.photos.where(:id => params[:photo_ids]).destroy_all
+    redirect_to '/user/photos'
   end
 end
