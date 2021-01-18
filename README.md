@@ -1,6 +1,6 @@
 # Photo Repo
 
-A Ruby-on-Rails-based photo repository made for the Shopify 2021 Summer Internship Application. Front-end is built to exercise all backend features, but is minimal and was not my focus for this project. 
+A Ruby-on-Rails-based photo repository made for the Shopify 2021 Summer Internship Application. Front-end is built to exercise all backend features, but is minimal and was not my focus for this project. Photo uploading is managed by Ruby-on-Rails' `ActiveStorage`.
 
 ## Features
 - User account creation/authentication
